@@ -1,6 +1,7 @@
 @import 'header';
 @import 'login';
 @import 'form';
+@import 'flash';
 @import 'btn';
 @import 'board';
 @import 'common';
@@ -20,4 +21,8 @@ a {
   text-decoration: none;
   font-size: 18px;
   color: black;
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

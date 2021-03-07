@@ -10,7 +10,8 @@
   %body
     .header
       .header-title Boards
-      .header-alert
-        %p.notice= notice
-        %p.alert= alert
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield

@@ -6,6 +6,6 @@
       = image_tag 'actions.svg', class: 'dropbtn'
       .dropdown-content 
         = link_to '編集する', edit_board_path(@board.id)
-        = link_to '削除する', board_path(@board.id)
+        = link_to '削除する', board_path(@board.id), data:{ method: 'delete', confirm: '本当によろしいですか?' }
   .board
     = @board.content
