@@ -2,7 +2,7 @@
   %h2 All Boards
   .cards
     - @boards.each do |board|
-      = link_to board_path(board.id) do
+      = link_to root_path do
         .board
           .board-flex
             .board-title
