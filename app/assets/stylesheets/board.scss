@@ -4,25 +4,25 @@
   padding: 20px;
   border-radius: 10px;
 
+  &-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &-title {
     font-weight: 800;
     font-size: 18px;
     padding-bottom: 10px;
   }
 
-  &_detail {
-    display: flex;
-    font-size: 12px;
-    position: relative;
-
-    &_actions {
-      right: 10px;
-      top: 100px;
-      position: absolute;
-    }
-  }
-
   &-content{
     padding-bottom: 40px;
   }
 } 
+
+.new-board {
+  border: 1px dashed black;
+  width: 100%;
+  padding: 68px 0;
+  text-align: center;
+}
