@@ -1,22 +1,21 @@
 .container
   %h2 All Boards
-  .cards
-    - @boards.each do |board|
-      = link_to root_path do
-        .board
-          .board-flex
-            .board-title
-              = board.title
-            -if user_signed_in? && current_user.boards.exists?(id: board.id)
-              .dropdown
-                = image_tag 'actions.svg', class: 'dropbtn'
-                .dropdown-content 
-                  = link_to '編集する', edit_board_path(board.id)
-                  = link_to '削除する', board_path(board.id), data:{ method: 'delete', confirm: '本当によろしいですか?' }
-          .board-content 
-            = board.content
-          .board-user
-            = board.user.email
+  - @boards.each do |board|
+    = link_to board_path(board) do
+      .board
+        .board-flex
+          .board-title
+            = board.title
+          - if user_signed_in? && current_user.boards.exists?(id: board.id)
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+              .dropdown-content 
+                = link_to '編集する', edit_board_path(board.id)
+                = link_to '削除する', board_path(board.id), data:{ method: 'delete', confirm: '本当によろしいですか?' }
+        .board-content 
+          = board.content
+        .board-user
+          = board.user.email
   = link_to new_board_path do
     .new-board
       %p ＋Add new boards
