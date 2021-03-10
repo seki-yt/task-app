@@ -1,5 +1,14 @@
 .container
-  = @board.title
+  %h2= @board.title
+
+  - @tasks.each do |task|
+    .board
+      .board-title
+        = task.title
+      .board-content 
+        = task.content
+      .board-user
+        = task.user.email
   = link_to new_board_task_path(@board) do
     .new-board
-      %p ＋Add new Tasks
+      %p ＋Add Tasks
