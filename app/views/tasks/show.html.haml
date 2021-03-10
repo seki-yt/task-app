@@ -1,0 +1,18 @@
+.container
+  .board-flex
+    %h2
+      = @task.title
+    .dropdown
+      = image_tag 'actions.svg', class: 'dropbtn'
+      .dropdown-content 
+        = link_to '編集する', root_path
+        = link_to '削除する', root_path
+  .board
+    .board-content 
+      = @task.content
+  .comment
+    comments
+  = link_to new_board_path do
+    .new-comment
+      %p ＋Add new comment
+  
