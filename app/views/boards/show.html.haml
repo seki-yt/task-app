@@ -2,13 +2,14 @@
   %h2= @board.title
 
   - @tasks.each do |task|
-    .board
-      .board-title
-        = task.title
-      .board-content 
-        = task.content
-      .board-user
-        = task.user.email
+    = link_to task_path(task.id) do
+      .board
+        .board-title
+          = task.title
+        .board-content 
+          = task.content
+        .board-user
+          = task.user.email
   = link_to new_board_task_path(@board) do
     .new-board
-      %p ＋Add Tasks
+      %p ＋Add Task
