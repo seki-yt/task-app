@@ -1,2 +1,5 @@
 .container
   = @board.title
+  = link_to new_board_task_path(@board) do
+    .new-board
+      %p ＋Add new Tasks
