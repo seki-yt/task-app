@@ -5,8 +5,8 @@
     .dropdown
       = image_tag 'actions.svg', class: 'dropbtn'
       .dropdown-content 
-        = link_to '編集する', edit_task_path(@task)
-        = link_to '削除する', task_path(@task), data:{ method: 'delete', confirm: '本当によろしいですか?' }
+        = link_to '編集する', edit_board_task_path(@board, @task)
+        = link_to '削除する', board_task_path(@board, @task), data:{ method: 'delete', confirm: '本当によろしいですか?' }
   .board
     .board-content 
       = @task.content
