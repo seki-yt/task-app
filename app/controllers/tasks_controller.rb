@@ -34,6 +34,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    task = current_user.tasks.find(params[:id])
+    task.destroy!
+    redirect_to root_path, notice: '削除しました'
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :content).merge(user_id: current_user.id)

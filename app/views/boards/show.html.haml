@@ -2,7 +2,7 @@
   %h2= @board.title
 
   - @tasks.each do |task|
-    = link_to task_path(task.id) do
+    = link_to task_path(task) do
       .board
         .board-title
           = task.title
