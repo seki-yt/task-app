@@ -1,4 +1,7 @@
 .container
+  - if @task.eyecatch.attached?
+    .image-eyecatch
+      = image_tag @task.eyecatch
   .board-flex
     %h2
       = @task.title
