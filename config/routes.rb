@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-  resources :tasks, only:[:show, :edit, :update, :destroy]
+  resources :tasks do
+    resources :comments, only:[:new, :create]
+  end
 end

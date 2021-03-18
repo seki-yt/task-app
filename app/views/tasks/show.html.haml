@@ -14,8 +14,12 @@
     .board-content 
       = @task.content
   .comment
-    comments
-  = link_to new_board_path do
+    %h3 comments
+    - @comment.each do |comment|
+      .comment.content
+        = comment.user.email
+        %p= comment.content
+  = link_to new_task_comment_path(@task) do
     .new-comment
       %p ＋Add new comment
   

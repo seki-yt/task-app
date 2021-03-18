@@ -1,6 +1,10 @@
 .comment {
-  font-size: 26px;
+  font-size: 20px;
   margin-bottom: 30px;
+
+  &-content{
+    font-size: 16px;
+  }
 }
 
 .new-comment {
