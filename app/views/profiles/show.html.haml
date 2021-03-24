@@ -1,0 +1,19 @@
+.container 
+  .profile
+    .profile-left
+      %h2 Profile
+    .profile-right
+      = link_to '編集する', edit_profile_path
+  .profile-content
+    - if @profile&.avater&.attached?
+      .image-profile
+        = image_tag @profile.avater
+    .nickname
+      %p ニックネーム
+      %h2= current_user.display_name
+    .birthday
+      %p 誕生日
+      = current_user.display_birthday
+    .introduction 
+      %p 自己紹介
+      = simple_format current_user.profile&.introduction
