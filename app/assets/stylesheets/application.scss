@@ -6,6 +6,7 @@
 @import 'board';
 @import 'common';
 @import 'comment';
+@import 'profile';
 
 body {
   font-family:  Avenir;
@@ -14,7 +15,7 @@ body {
 } 
 
 .container{
-  padding: 32px 26px;
+  padding: 32px;
   width: 100%;
 }
 

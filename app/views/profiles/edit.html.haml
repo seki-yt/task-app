@@ -1,0 +1,20 @@
+.container 
+  %h2 Profile Update
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div 
+      = f.label :avater, 'アバター'
+    %div 
+      = f.file_field :avater, class: 'file'
+    %div 
+      = f.label :nickname, 'ユーザー名'
+    %div 
+      = f.text_field :nickname, class: 'text'
+    %div
+      = f.label :introduction, '自己紹介'
+    %div 
+      = f.text_area :introduction, class: 'text'
+    %div 
+      = f.label :birthday, '誕生日'
+    %div
+      = f.date_field :birthday, class: 'text'
+    = f.submit '更新する', class: 'btn-primary'

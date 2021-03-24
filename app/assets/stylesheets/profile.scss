@@ -1,0 +1,26 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+
+  &-right {
+    margin-top: 5px;
+  }
+}
+
+.profile-content{
+  text-align: center;
+  
+  .image-profile{
+    margin: 40px 0;
+
+    img {
+      border-radius: 50%;
+      height: 400px;
+      width: 400px;
+    }
+  }
+  .nickname{
+  
+  }
+
+}
