@@ -78,8 +78,24 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: task-app_development
+
+test:
+  <<: *default
+  database: task-app_test
+
 production:
   <<: *default
-  database: task_app_production
-  username: task_app
-  password: <%= ENV['TASK_APP_DATABASE_PASSWORD'] %>
+  database: task-app_production
+  username: task-blog-app
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
