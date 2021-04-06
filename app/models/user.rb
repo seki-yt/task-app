@@ -38,4 +38,12 @@ class User < ApplicationRecord
   def display_birthday
     profile&.birthday
   end
+
+  def has_written?(task)
+    tasks.exists?(id: task.id)
+  end
+
+  def profile_written?
+    profile&.avater&.attached?
+  end
 end

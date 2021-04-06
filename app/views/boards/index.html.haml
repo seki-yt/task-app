@@ -1,5 +1,5 @@
 .container
-  %h2 All Boards
+  %h2 ボード一覧
   - @boards.each do |board|
     = link_to board_path(board) do
       .board
@@ -15,8 +15,12 @@
         .board-content 
           = board.content
         .board-user
-          = board.user.email
+          - if board.user.profile_written?
+            = image_tag board.user.profile.avater
+            %p= board.user.profile.nickname
+          - else
+            %p= current_user.email
   = link_to new_board_path do
-    .new-board
-      %p ＋Add new boards
+    .new-card
+      %p ＋新しいボードの追加
     

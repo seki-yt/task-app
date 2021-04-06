@@ -5,11 +5,26 @@
   &-content{
     font-size: 16px;
   }
+
+  .comment-content {
+    background-color: #fafafa;
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 10px;
+
+  }
+  &-count {
+    display: flex;
+    p:nth-child(2) {
+      padding:2px 0 0 5px;
+    }
+  }
 }
 
 .new-comment {
-  padding: 0 20px;
   width: 100%;
   text-align: center;
   border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-bottom: 120px;
 }

@@ -10,9 +10,16 @@
         .board-title
           = task.title
         .board-content 
-          = task.content
+          = simple_format task.content
+        .comment-count 
+          %p コメント数
+          %p= task.comments.count
         .board-user
-          = task.user.email
+          - if @board.user.profile_written?
+            = image_tag @board.user.profile.avater
+            %p= @board.user.profile.nickname
+          - else
+            %p= current_user.email
   = link_to new_board_task_path(@board) do
-    .new-board
-      %p ＋Add Task
+    .new-card
+      %p ＋タスクの追加
