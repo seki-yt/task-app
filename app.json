@@ -1,0 +1,16 @@
+{
+  "name": "task app",
+  "description": "This is task-app",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/seki-yt/task-app",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}
