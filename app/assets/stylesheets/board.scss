@@ -18,13 +18,26 @@
   &-content{
     padding-bottom: 40px;
   }
+
+  &-user{
+    display: flex;
+
+    img {
+      margin: 12px 16px 0 0;
+      border-radius: 100%;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+    }
+  }
 } 
 
-.new-board {
+.new-card {
   border: 1px dashed black;
   width: 100%;
   padding: 68px 0;
   text-align: center;
+  margin-bottom: 120px;
 }
 .image-eyecatch {
   height: 300px;

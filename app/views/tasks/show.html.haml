@@ -5,21 +5,25 @@
   .board-flex
     %h2
       = @task.title
-    .dropdown
-      = image_tag 'actions.svg', class: 'dropbtn'
-      .dropdown-content 
-        = link_to '編集する', edit_board_task_path(@board, @task)
-        = link_to '削除する', board_task_path(@board, @task), data:{ method: 'delete', confirm: '本当によろしいですか?' }
+    - if user_signed_in? && current_user.has_written?(@task)
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content 
+          = link_to '編集する', edit_board_task_path(@board, @task)
+          = link_to '削除する', board_task_path(@board, @task), data:{ method: 'delete', confirm: '本当によろしいですか?' }
   .board
     .board-content 
       = @task.content
   .comment
-    %h3 comments
+    %h3 コメント
     - @comment.each do |comment|
-      .comment.content
-        = comment.user.email
-        %p= comment.content
+      .comment-content
+        - if @board.user.profile_written?
+          %p= @board.user.profile.nickname
+        - else
+          %p= comment.user.email
+        %p= simple_format comment.content
   = link_to new_task_comment_path(@task) do
     .new-comment
-      %p ＋Add new comment
+      %p ＋コメント追加
   

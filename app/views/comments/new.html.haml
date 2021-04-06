@@ -2,8 +2,9 @@
   %ul
     - @comment.errors.full_messages.each do |message|
       %li= message
-  %h2 New Comment
+  %h2 コメント投稿
   = form_with(model: @comment, url: task_comments_path(@comment.task), local: true) do |f|
-    = f.text_area :content, class: 'text'
-    = f.submit 'submit', class:'btn-primary'
+    %div
+      = f.text_area :content, class: 'text'
+    = f.submit '送信', class:'btn-primary'
 
