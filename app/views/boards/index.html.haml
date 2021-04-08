@@ -19,7 +19,7 @@
             = image_tag board.user.profile.avater
             %p= board.user.profile.nickname
           - else
-            %p= current_user.email
+            %p= board.user.email
   = link_to new_board_path do
     .new-card
       %p ＋新しいボードの追加
