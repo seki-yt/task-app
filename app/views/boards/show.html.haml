@@ -19,7 +19,7 @@
             = image_tag @board.user.profile.avater
             %p= @board.user.profile.nickname
           - else
-            %p= current_user.email
+            %p= task.user.email
   = link_to new_board_task_path(@board) do
     .new-card
       %p ＋タスクの追加
